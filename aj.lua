@@ -40,7 +40,7 @@ uiCorner.Parent = mainFrame
 local titleLabel = Instance.new("TextLabel")
 titleLabel.Size = UDim2.new(1, 0, 0, 30)
 titleLabel.BackgroundTransparency = 1
-titleLabel.Text = "🌟 TIME LEAP NAVIGATION"
+titleLabel.Text = "alljump menu"
 titleLabel.TextColor3 = Color3.new(1, 1, 1)
 titleLabel.Font = Enum.Font.SourceSansBold
 titleLabel.TextSize = 14
@@ -50,7 +50,7 @@ local counterLabel = Instance.new("TextLabel")
 counterLabel.Size = UDim2.new(1, 0, 0, 25)
 counterLabel.Position = UDim2.new(0, 0, 0, 30)
 counterLabel.BackgroundTransparency = 1
-counterLabel.Text = "Active Checkpoint: 0 / 0"
+counterLabel.Text = "checkpoint: 0 / 0"
 counterLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
 counterLabel.Font = Enum.Font.SourceSans
 counterLabel.TextSize = 16
@@ -60,7 +60,7 @@ local opacityLabel = Instance.new("TextLabel")
 opacityLabel.Size = UDim2.new(0, 110, 0, 30)
 opacityLabel.Position = UDim2.new(0, 10, 0, 65)
 opacityLabel.BackgroundTransparency = 1
-opacityLabel.Text = "Box Opacity (0-1):"
+opacityLabel.Text = "opacity (0-1):"
 opacityLabel.TextColor3 = Color3.new(0.9, 0.9, 0.9)
 opacityLabel.TextXAlignment = Enum.TextXAlignment.Left
 opacityLabel.Font = Enum.Font.SourceSans
@@ -86,7 +86,7 @@ local jumpLabel = Instance.new("TextLabel")
 jumpLabel.Size = UDim2.new(0, 110, 0, 30)
 jumpLabel.Position = UDim2.new(0, 10, 0, 105)
 jumpLabel.BackgroundTransparency = 1
-jumpLabel.Text = "Jump to Target ID:"
+jumpLabel.Text = "goto checkpoint:"
 jumpLabel.TextColor3 = Color3.new(0.9, 0.9, 0.9)
 jumpLabel.TextXAlignment = Enum.TextXAlignment.Left
 jumpLabel.Font = Enum.Font.SourceSans
@@ -111,9 +111,9 @@ jumpCorner.Parent = jumpInput
 
 local function updateCounterUI()
 	if #checkpoints == 0 then
-		counterLabel.Text = "Active Checkpoint: 0 / 0"
+		counterLabel.Text = "checkpoint: 0 / 0"
 	else
-		counterLabel.Text = "Active Checkpoint: " .. #checkpoints .. " / " .. #checkpoints
+		counterLabel.Text = "checkpoint: " .. #checkpoints .. " / " .. #checkpoints
 	end
 end
 
@@ -145,7 +145,7 @@ local function teleportToCheckpointIndex(idx)
 		humanoid:ChangeState(target.state)
 		hrp.AssemblyLinearVelocity = target.velocity
 		
-		counterLabel.Text = "Active Checkpoint: " .. idx .. " / " .. #checkpoints
+		counterLabel.Text = "checkpoint: " .. idx .. " / " .. #checkpoints
 	end
 end
 
